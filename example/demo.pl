@@ -81,7 +81,10 @@ $imap->reg_cb(
         $imap->connect();
     },
 );
-$imap->connect();
+my ($ok, $res) = $imap->connect()->recv();
+unless ($ok) {
+    die $res;
+}
 
 # send ping
 my $timer = AE::timer(30, 20*60, sub {

@@ -28,6 +28,7 @@ sub connect {
         $self->disconnect("reconnect requested");
     }
 
+    my $cv = AE::cv();
     $self->{accumulator}  = [];
     $self->{lineparts}  = [];
     $self->{socket} = AnyEvent::Handle->new(
@@ -39,8 +40,10 @@ sub connect {
                 line => "\r\n", sub {
                     my ($handle, $line) = @_;
                     if ($line =~ /^\*\s+OK/) {
+                        $cv->send(1, $line);
                         $self->event('connect');
                     } else {
+                        $cv->send(0, $line);
                         $self->event('connect_error');
                     }
                 },
@@ -78,6 +81,7 @@ sub connect {
             });
         },
     );
+    return $cv;
 }
 
 sub login {
@@ -222,6 +226,14 @@ AnyEvent::IMAP - IMAP client library for AnyEvent
         pass   => 'password',
         port   => 993,
         ssl    => 1,
+    );
+    $imap->reg_cb(
+        connect => sub {
+            $imap->login()->cb(sub {
+                my ($ok, $line) = shift->recv;
+                ...
+            }
+        }
     );
     $imap->connect();
 
