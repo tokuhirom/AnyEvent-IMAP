@@ -316,7 +316,7 @@ Some of the code taken from L<Net::IMAP::Client>.
 
 =head1 SEE ALSO
 
-L<Net::IMAP::Client>, RFC 2060, L<AnyEvent>
+L<Net::IMAP::Client>, RFC 3501, L<AnyEvent>
 
 =head1 LICENSE
 
