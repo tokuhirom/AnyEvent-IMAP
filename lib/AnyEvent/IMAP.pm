@@ -306,6 +306,16 @@ $res is a response value. You can filter it by $filter in argument.
 
 is available in example/demo.pl
 
+=head1 FAQ
+
+=over 4
+
+=item How can I decode utf-7 folder names?
+
+use L<Encode::IMAPUTF7>.
+
+=back
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
