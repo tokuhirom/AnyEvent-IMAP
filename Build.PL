@@ -12,9 +12,10 @@ my $build = Module::Build->new(
     },
     configure_requires   => { 'Module::Build' => '0.38' },
     requires             => {
-        # 'Exporter'                      => '0',
         'parent'                        => '0',
-        # 'Plack'                         => '0.9949',
+        'Mouse' => '0.97',
+        'Object::Event' => '1.23',
+        'AnyEvent' => 7,
     },
 
     no_index    => { 'directory' => [ 'inc' ] },
