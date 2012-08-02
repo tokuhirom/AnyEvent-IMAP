@@ -310,7 +310,7 @@ is available in example/demo.pl
 
 =over 4
 
-=item How can I decode utf-7 folder names?
+=item How can I decode UTF-7 folder names?
 
 use L<Encode::IMAPUTF7>.
 
