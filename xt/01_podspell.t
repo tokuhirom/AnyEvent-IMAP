@@ -58,3 +58,5 @@ Gosuke
 Miyashita
 mysqldiff
 mmm
+ssl
+UTF
