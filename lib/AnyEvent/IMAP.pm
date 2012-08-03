@@ -175,8 +175,12 @@ sub select {
 }
 
 sub fetch {
-    my ($self, $query) = @_;
-    my ($id, $cv) = $self->send_cmd("FETCH $query", sub {
+    my ($self, $query, $uid_mode) = @_;
+    my $cmd = "FETCH $query";
+    if ($uid_mode) {
+        $cmd = "UID $cmd";
+    }
+    my ($id, $cv) = $self->send_cmd($cmd, sub {
         # in form: [ '*', ID, 'FETCH', [ tokens ]]
         [map { +{@{$_->[3]}} } grep { $_->[2] eq 'FETCH' } map {imap_parse_tokens([$_])} @_]
     });
