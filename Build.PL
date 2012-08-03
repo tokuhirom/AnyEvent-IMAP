@@ -16,6 +16,7 @@ my $build = Module::Build->new(
         'Mouse' => '0.97',
         'Object::Event' => '1.23',
         'AnyEvent' => 7,
+        'Net::SSLeay' => 0,
     },
 
     no_index    => { 'directory' => [ 'inc' ] },
