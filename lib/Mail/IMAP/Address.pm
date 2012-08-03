@@ -1,4 +1,4 @@
-package AnyEvent::IMAP::Address;
+package Mail::IMAP::Address;
 use strict;
 use warnings;
 use utf8;

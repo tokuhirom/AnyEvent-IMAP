@@ -9,7 +9,7 @@ use parent qw(Object::Event);
 use AnyEvent::Socket;
 use AnyEvent::Handle;
 use AnyEvent::TLS;
-use AnyEvent::IMAP::Util;
+use Mail::IMAP::Util;
 
 use Mouse;
 

@@ -2,9 +2,9 @@ Build.PL
 Changes
 example/demo.pl
 lib/AnyEvent/IMAP.pm
-lib/AnyEvent/IMAP/Address.pm
-lib/AnyEvent/IMAP/Envelope.pm
-lib/AnyEvent/IMAP/Util.pm
+lib/Mail/IMAP/Address.pm
+lib/Mail/IMAP/Envelope.pm
+lib/Mail/IMAP/Util.pm
 LICENSE
 MANIFEST			This list of files
 META.json
