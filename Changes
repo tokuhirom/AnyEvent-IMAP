@@ -1,5 +1,9 @@
 Revision history for Perl extension AnyEvent::IMAP
 
+0.03
+
+    - renamed AnyEvent::IMAP::* utility classes to Mail::IMAP::*
+
 0.02
 
     - fixed deps
