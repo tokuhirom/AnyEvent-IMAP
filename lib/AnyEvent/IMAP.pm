@@ -169,6 +169,7 @@ sub status_multi {
 
 sub select {
     my ($self, $folder) = @_;
+    $folder = imap_string_quote($folder);
     my ($id, $cv) = $self->send_cmd("SELECT $folder");
     return $cv;
 }
