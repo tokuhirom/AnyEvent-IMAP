@@ -36,4 +36,32 @@ for (qw(FROM SENDER REPLY_TO TO CC BCC)) {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Mail::IMAP::Envelope - envelope
+
+=head1 METHODS
+
+=over 4
+
+=item $enve->subject
+
+=item $enve->date
+
+=item $enve->from
+
+=item $enve->sender
+
+=item $enve->reply_to
+
+=item $enve->to
+
+=item $enve->cc
+
+=item $enve->bcc
+
+=back
+
 
