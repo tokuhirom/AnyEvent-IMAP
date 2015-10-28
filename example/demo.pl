@@ -7,7 +7,7 @@ use autodie;
 use AnyEvent::IMAP;
 use Config::Pit;
 use Log::Minimal;
-use AnyEvent::IMAP::Envelope;
+use Mail::IMAP::Envelope;
 
 my $conf = pit_get('damail', require => {
     'imap_server' => 'imap server',
@@ -53,7 +53,7 @@ $imap->reg_cb(
                                     my ($ok, $ret) = shift->recv;
                                     infof("summaries: %s ****************", $ok);
                                     for my $summary (@$ret) {
-                                        $summary->{ENVELOPE} = AnyEvent::IMAP::Envelope->new(delete $summary->{ENVELOPE});
+                                        $summary->{ENVELOPE} = Mail::IMAP::Envelope->new(delete $summary->{ENVELOPE});
                                         infof("%s", ddf($summary));
                                     }
                                 });
